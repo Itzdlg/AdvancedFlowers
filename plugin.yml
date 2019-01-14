@@ -1,0 +1,9 @@
+name: AdvFlowers
+main: me.schooltests.advflowers.AdvFlowers
+author: SchoolTests
+version: 1
+commands:
+  createflower:
+    usage: /createflower
+    description: Custom Flowers
+    aliases: [cflower, customflower, advflowers, advflower]
