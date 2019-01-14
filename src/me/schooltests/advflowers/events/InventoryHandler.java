@@ -16,7 +16,6 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 
 import me.schooltests.advflowers.AdvFlowers;
-import me.schooltests.advflowers.CreateItemStack;
 import me.schooltests.advflowers.ItemBuilder;
 import me.schooltests.advflowers.Util;
 
@@ -90,14 +89,14 @@ public class InventoryHandler implements Listener {
 				open.setItem(34, Grass);
 				open.setItem(35, Fern);
 				
-			} else if (slot == 6) {
-				ItemStack SunFlower = CreateItemStack.get(Material.DOUBLE_PLANT, 1, ChatColor.YELLOW + "Sunflower");
-				ItemStack Lilac = CreateItemStack.get(Material.DOUBLE_PLANT, 1, ChatColor.YELLOW + "Lilac", (short) 1);
-				ItemStack RoseBush = CreateItemStack.get(Material.DOUBLE_PLANT, 1, ChatColor.YELLOW + "Rose Bush", (short) 4);
-				ItemStack Peony = CreateItemStack.get(Material.DOUBLE_PLANT, 1, ChatColor.YELLOW + "Peony", (short) 5);
-				ItemStack TallGrass = CreateItemStack.get(Material.DOUBLE_PLANT, 1, ChatColor.YELLOW + "Tall Grass", (short) 2);
-				ItemStack LargeFern = CreateItemStack.get(Material.DOUBLE_PLANT, 1, ChatColor.YELLOW + "Large Fern", (short) 3);
-				ItemStack air = CreateItemStack.get(Material.AIR, 1);
+			} else if (slot == 6) {			
+				ItemStack SunFlower = new ItemBuilder(Material.DOUBLE_PLANT, 1).setName(ChatColor.YELLOW + "Sunflower").build();
+				ItemStack Lilac = new ItemBuilder(Material.DOUBLE_PLANT, 1, (byte) 1).setName(ChatColor.YELLOW + "Lilac").build();
+				ItemStack RoseBush = new ItemBuilder(Material.DOUBLE_PLANT, 1, (byte) 4).setName(ChatColor.YELLOW + "Rose Bush").build();
+				ItemStack Peony = new ItemBuilder(Material.DOUBLE_PLANT, 1, (byte) 5).setName(ChatColor.YELLOW + "Peony").build();
+				ItemStack TallGrass = new ItemBuilder(Material.DOUBLE_PLANT, 1, (byte) 2).setName(ChatColor.YELLOW + "Tall Grass").build();
+				ItemStack LargeFern = new ItemBuilder(Material.DOUBLE_PLANT, 1, (byte) 3).setName(ChatColor.YELLOW + "Large Fern").build();
+				ItemStack air = new ItemBuilder(Material.AIR, 1).setName(ChatColor.YELLOW + "").build();
 				
 				open.setItem(21, SunFlower);
 				open.setItem(22, Lilac);
@@ -112,18 +111,18 @@ public class InventoryHandler implements Listener {
 				open.setItem(34, air);
 				open.setItem(35, air);
 			} else if (slot == 7) {
-				ItemStack Cactus = CreateItemStack.get(Material.CACTUS, 1, ChatColor.DARK_AQUA + "Cactus");
-				ItemStack DeadBush = CreateItemStack.get(Material.DEAD_BUSH, 1, ChatColor.DARK_AQUA + "Dead Bush");
-				ItemStack Vines = CreateItemStack.get(Material.VINE, 1, ChatColor.DARK_AQUA + "Vines");
-				ItemStack LilyPad = CreateItemStack.get(Material.WATER_LILY, 1, ChatColor.DARK_AQUA + "Lily Pad");
-				ItemStack BrownMushroom = CreateItemStack.get(Material.BROWN_MUSHROOM, 1, ChatColor.DARK_AQUA + "Brown Mushroom");
-				ItemStack RedMushroom = CreateItemStack.get(Material.RED_MUSHROOM, 1, ChatColor.DARK_AQUA + "Red Mushroom");
-				ItemStack Redstone = CreateItemStack.get(Material.REDSTONE, 1, ChatColor.DARK_AQUA + "Redstone Dust");
-				ItemStack Seeds = CreateItemStack.get(Material.SEEDS, 1, ChatColor.DARK_AQUA + "Seeds");
-				ItemStack Wheat = CreateItemStack.get(Material.WHEAT, 1, ChatColor.DARK_AQUA + "Wheat");
-				ItemStack Pumpkin = CreateItemStack.get(Material.PUMPKIN_SEEDS, 1, ChatColor.DARK_AQUA + "Grown Pumpkin Stem");
-				ItemStack Beetroot = CreateItemStack.get(Material.BEETROOT_SEEDS, 1, ChatColor.DARK_AQUA + "Grown Beetroot");
-				ItemStack air = CreateItemStack.get(Material.AIR, 1);
+				ItemStack Cactus = new ItemBuilder(Material.CACTUS, 1).setName(ChatColor.DARK_AQUA + "Cactus").build();
+				ItemStack DeadBush = new ItemBuilder(Material.DEAD_BUSH, 1).setName(ChatColor.DARK_AQUA + "Dead Bush").build();
+				ItemStack Vines = new ItemBuilder(Material.VINE, 1).setName(ChatColor.DARK_AQUA + "Vines").build();
+				ItemStack LilyPad = new ItemBuilder(Material.WATER_LILY, 1).setName(ChatColor.DARK_AQUA + "Lily Pad").build();
+				ItemStack BrownMushroom = new ItemBuilder(Material.BROWN_MUSHROOM, 1).setName(ChatColor.DARK_AQUA + "Brown Mushroom").build();
+				ItemStack RedMushroom = new ItemBuilder(Material.RED_MUSHROOM, 1).setName(ChatColor.DARK_AQUA + "Red Mushroom").build();
+				ItemStack Redstone = new ItemBuilder(Material.REDSTONE, 1).setName(ChatColor.DARK_AQUA + "Redstone Dust").build();
+				ItemStack Seeds = new ItemBuilder(Material.SEEDS, 1).setName(ChatColor.DARK_AQUA + "Seeds").build();
+				ItemStack Wheat = new ItemBuilder(Material.WHEAT, 1).setName(ChatColor.DARK_AQUA + "Wheat").build();
+				ItemStack Pumpkin = new ItemBuilder(Material.PUMPKIN_SEEDS, 1).setName(ChatColor.DARK_AQUA + " Grown Pumpkin Stem").build();
+				ItemStack Beetroot = new ItemBuilder(Material.BEETROOT_SEEDS, 1).setName(ChatColor.DARK_AQUA + "Grown Beetroot").build();
+				ItemStack air = new ItemBuilder(Material.AIR, 1).setName(ChatColor.DARK_AQUA + "").build();
 				
 				open.setItem(21, Cactus);
 				open.setItem(22, DeadBush);
@@ -141,12 +140,12 @@ public class InventoryHandler implements Listener {
 				open.setItem(Util.findOpenLayer(open), item);
 			} else if (slot == 49) {
 				List<Integer> slots = Arrays.asList(46, 37, 28, 19, 10, 1);
-				ItemStack air = CreateItemStack.get(Material.AIR, 1);
+				ItemStack air = new ItemBuilder(Material.AIR, 1).setName("").build();
 				for(int loop : slots) {
 					open.setItem(loop, air);
 				}
 			} else if (slot == 50) {
-				ItemStack air = CreateItemStack.get(Material.AIR, 1);
+				ItemStack air = new ItemBuilder(Material.AIR, 1).setName("").build();
 				open.setItem(Util.findLastLayer(open), air);
 			} else if (slot == 51) {
 				List<Integer> slots = Arrays.asList(46, 37, 28, 19, 10, 1);
